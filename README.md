@@ -64,7 +64,7 @@ zone "semeruc10.pw" {
 Pada UML GRESIK atau UML SIDOARJO, ping semeruc10.pw atau host -t A semeruc10.pw. Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99042125-2edeb900-25c7-11eb-9f2b-be483f4ecb66.png)
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 2. Alias http://www.semeruc10.pw 
 Jawab : <br />
@@ -77,13 +77,13 @@ www     IN	    CNAME	   semeruc10.pw.
 
 ![image](https://user-images.githubusercontent.com/57977401/99041943-cdb6e580-25c6-11eb-8c99-cbd345d0ec3f.png)
 
-3. Service bind9 restart<br />
+3. Service bind9 restart<br /><br />
 
 **Testing pada Klien**<br />
 Pada UML GRESIK atau UML SIDOARJO, ping www.semeruc10.pw atau host -t CNAME www.semeruc10.pw. Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99042351-8c730580-25c7-11eb-95cb-ce4e3dd4111c.png)
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 3.Subdomain http://penanjakan.semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
 Jawab : <br />
@@ -97,7 +97,7 @@ penanjakan	IN	A	10.151.77.92  ; IP PROBOLINGGO
 
 ![image](https://user-images.githubusercontent.com/57977401/99041943-cdb6e580-25c6-11eb-8c99-cbd345d0ec3f.png)
 
-4. Service bind9 restart<br />
+4. Service bind9 restart<br /><br />
 
 **Testing pada Klien**<br />
 Pada UML GRESIK atau UML SIDOARJO, ping penanjakan.semeruc10.pw atau host -t A penanjakan.semeruc10.pw. Hasilnya adalah sebagai 
@@ -133,7 +133,7 @@ zone "77.151.10.in-addr.arpa" {
 
 ![image](https://user-images.githubusercontent.com/57977401/99044439-bc6fd800-25ca-11eb-84c3-d8edfd3af817.png)
 
-6. Service bind9 restart<br />
+6. Service bind9 restart<br /><br />
 
 **Testing pada Klien**<br />
 Pada UML GRESIK atau UML SIDOARJO, masukkan command host -t PTR 10.151.77.92. Hasilnya adalah sebagai berikut
@@ -141,7 +141,7 @@ Pada UML GRESIK atau UML SIDOARJO, masukkan command host -t PTR 10.151.77.92. Ha
 ![image](https://user-images.githubusercontent.com/57977401/99044639-08228180-25cb-11eb-82ad-ef39ab3f4f28.png)
 
 Karena sudah mengarah ke semeruc10.pw, berarti reverese domain kita berhasil
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 5. DNS Server Slave pada MOJOKERTO
 Jawab : <br />
@@ -175,7 +175,7 @@ zone "semeruc10.pw" {
 
 ![image](https://user-images.githubusercontent.com/57977401/99045105-ccd48280-25cb-11eb-8e2b-d99a4b7f3d26.png)
 
-3. Service bind9 restart<br />
+3. Service bind9 restart<br /><br />
 
 **Testing pada Klien**<br />
 1. Matikan service bind9 pada UML MALANG dengan command
@@ -192,7 +192,7 @@ service bind9 stop
 3. ping semeruc10.pw atau host -t A semeruc10.pw. Apabila hasilnya seperti yang tertera dibawah, maka DNS Slave berhasil
 
 ![image](https://user-images.githubusercontent.com/57977401/99046351-96980280-25cd-11eb-8867-5947fb3fd035.png)
-<br /><br /><br />
+<br /><br /><br /><br />
 
 
 #### 6. Subdomain dengan alamat http://gunung.semeruC10.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.
@@ -257,7 +257,7 @@ allow-query{any;};
 
 ![image](https://user-images.githubusercontent.com/57977401/99046991-80d70d00-25ce-11eb-8db7-84a5f2a46974.png)
 
-9. Service bind9 restart<br />
+9. Service bind9 restart<br /><br />
 
 **Testing pada Klien**<br />
 Pada UML GRESIK atau UML SIDOARJO, ping gunung.semeruc10.pw atau host -t A gunung.semeruc10.pw. Hasilnya adalah sebagai berikut
@@ -265,7 +265,7 @@ Pada UML GRESIK atau UML SIDOARJO, ping gunung.semeruc10.pw atau host -t A gunun
 ![image](https://user-images.githubusercontent.com/57977401/99047524-49b52b80-25cf-11eb-9905-a00c89b98fd5.png)
 
 Karena sudah mengarah ke server probolinggo, berarti Delegasi Domain berhasil
-<br /><br /><br />
+<br /><br /><br /><br />
 
 
 #### 7. Subdomain dengan nama http://naik.gunung.semeruc10.pw, domain ini diarahkan ke IP Server PROBOLINGGO. 
@@ -279,7 +279,7 @@ naik	IN	A	10.151.77.92
 
 ![image](https://user-images.githubusercontent.com/57977401/99046991-80d70d00-25ce-11eb-8db7-84a5f2a46974.png)    
 
-3. Service bind9 restart<br />
+3. Service bind9 restart<br /><br />
 
 **Testing pada Klien**<br />
 Pada UML GRESIK atau UML SIDOARJO, ping gunung.semeruc10.pw atau host -t A gunung.semeruc10.pw. Hasilnya adalah sebagai berikut
@@ -311,13 +311,13 @@ ServerAlias www.semeruc10.pw
 
 ![image](https://user-images.githubusercontent.com/57977401/99056293-11b0e700-25d5-11eb-8de8-0dee7112222d.png)
 
-10. service apache2 restart<br />
+10. service apache2 restart<br /><br />
 
 **Testing**<br />
 Buka semeruc10.pw, akan muncul halaman seperti dibawah
 
 ![image](https://user-images.githubusercontent.com/57977401/99056459-4a50c080-25d5-11eb-93f0-d7307d870380.png)
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 9. Diaktifkan mod rewrite agar urlnya menjadi http://semeruc10.pw/home.
 Jawab : <br />
@@ -334,14 +334,14 @@ RewriteRule ^(.*)$ index.php/$1 [L,QSA]
 
 ![image](https://user-images.githubusercontent.com/57977401/99056589-78ce9b80-25d5-11eb-8414-f70ea7bb8db4.png)
 
-4. service apache2 restart<br />
+4. service apache2 restart<br /><br />
 
 **Testing**<br />
 Buka semeruc10.pw/home, akan muncul halaman seperti dibawah
 
 ![image](https://user-images.githubusercontent.com/57977401/99056660-9a2f8780-25d5-11eb-9b87-2e7f0d38ab37.png)
 
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 10. Web http://penanjakan.semeruc10.pw akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot pada /var/www/penanjakan.semeruc10.pw dan memiliki struktur folder sebagai berikut:
 /var/www/penanjakan.semeruc10.pw<br />
@@ -369,14 +369,14 @@ ServerName penanjakan.semeruc10.pw
 
 ![image](https://user-images.githubusercontent.com/57977401/99056293-11b0e700-25d5-11eb-8de8-0dee7112222d.png)
 
-10. service apache2 restart<br />
+10. service apache2 restart<br /><br />
 
 **Testing**<br />
 Buka penanjakan.semeruc10.pw, akan muncul halaman seperti dibawah
 
 ![image](https://user-images.githubusercontent.com/57977401/99070638-9444a100-25eb-11eb-9b8a-68ee0a0022d9.png)
 
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 11. Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan.
 Jawab : <br />
@@ -399,7 +399,7 @@ Keterangan :<br />
 - Apabila di dalam tag directory berupa ```Options +Indexes```, maka semua folder dan file di dalam directory tersebut dapat diakses<br />
 - Apabila di dalam tag directory berupa ```Options -Indexes```, maka semua folder dan file di dalam directory tersebut dapat diakses<br />
 
-3. service apache2 restart<br />
+3. service apache2 restart<br /><br />
 
 **Testing**<br />
 1. Buka penanjakan.semeruc10.pw/public/css
@@ -421,7 +421,7 @@ apabila ketiganya tidak dapat diakses, maka konfigurasi selesai
 ![image](https://user-images.githubusercontent.com/57977401/99061400-71f75700-25dc-11eb-98f3-8014d235ad10.png)
 
 Apabila folder public dapat diakses, maka maka konfigurasi selesai
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 12. Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
 Jawab : <br />
@@ -456,7 +456,7 @@ Gambar untuk konfigurasi Error 404 dapat dilihat dibawah : <br />
 ![image](https://user-images.githubusercontent.com/57977401/99071355-f356e580-25ec-11eb-9716-7ebe7dd2679d.png)
 
 
-3. service apache2 restart<br />
+3. service apache2 restart<br /><br />
 
 **Testing**<br />
 1. Buka semeruc10.pw/hehehe
@@ -466,7 +466,7 @@ Gambar untuk konfigurasi Error 404 dapat dilihat dibawah : <br />
 ![image](https://user-images.githubusercontent.com/57977401/99061613-cb5f8600-25dc-11eb-98fc-00b44f092d5d.png)
 
 Ketiganya menghasilkan halaman error yang sama seperti yang ditampilkan diatas, maka konfigurasi sudah terhitung benar
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 13. Untuk mengakses file assets javascript awalnya harus menggunakan url http://penanjakan.semeruc10.pw/public/javascripts. Karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi http://penanjakan.semeruc10.pw/js.
 Jawab : <br />
@@ -480,7 +480,7 @@ Alias "/js" "/var/www/penanjakan.semeruc10.pw/public/javascripts"
 
 3. cd /var/www/penanjakan.semeruc10.pw/public/javascripts/
 4. Masukkan command touch app.js
-5. service apache2 restart<br />
+5. service apache2 restart<br /><br />
 
 **Testing**<br />
 1. nano penanjakan.semeruc10.pw.conf
@@ -501,7 +501,7 @@ Menjadi
 5. Hasilnya dapat dilihat seperti dibawah, bahwa direktori pulic/javascripts dapat dibuka menggunakan Alias /js, maka konfigurasi sudah benar
 
 ![image](https://user-images.githubusercontent.com/57977401/99062691-52612e00-25de-11eb-82a3-747831ded7d9.png)
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 14. Sedangkan web http://naik.gunung.semeruc10.pw sudah bisa diakses hanya dengan menggunakan port 8888. DocumentRoot web berada pada /var/www/naik.gunung.semeruc10.pw. 
 Jawab : <br />
@@ -538,7 +538,7 @@ Listen 8888
 ![image](https://user-images.githubusercontent.com/57977401/99063613-b33d3600-25df-11eb-8c23-782e5d58828c.png)
 
 11. a2ensite naik.gunung.semeruc10.pw untuk mengaktifkan site naik.gunung.semeruc10.pw
-12. service apache2 restart<br />
+12. service apache2 restart<br /><br />
 
 **Testing**<br />
 1. Buka naik.gunung.semeruc10.pw:8888
@@ -550,7 +550,7 @@ Listen 8888
 
 ![image](https://user-images.githubusercontent.com/57977401/99071853-e2f33a80-25ed-11eb-8e14-12820c39e85a.png)
 
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 15. Dikarenakan web http://naik.gunung.semeruc10.pw bersifat private, harus membuat web http://naik.gunung.semeruc10.pw agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung”
 Jawab : <br />
@@ -617,7 +617,7 @@ Require valid-user
 - AuthType Basic merupakan pemberitahuan bahwa authentication bersifat basic <br />
 - AuthName merupakan pemilihan nama realm yang akan ditampilkan kepada pengguna saat meminta kredensial<br />
 - AuthUserFile merupakan path dari file password yang sudah kita buat, yaitu di /etc/apache2/.htpasswd. Ini untuk mengarahkan Apache ke file kata sandi yang kita buat<br />
-- Require valid-user menunjukkan bahwa kita membutuhkan pengguna yang valid untuk mengakses sumber daya ini, yang berarti siapa pun yang dapat memverifikasi identitas mereka dengan kata sandi akan diizinkan masuk<br />
+- Require valid-user menunjukkan bahwa kita membutuhkan pengguna yang valid untuk mengakses sumber daya ini, yang berarti siapa pun yang dapat memverifikasi identitas mereka dengan kata sandi akan diizinkan masuk<br /><br />
 
 **Testing**<br />
 1. Buka naik.gunung.semeruc10.pw:8888
@@ -632,7 +632,7 @@ Require valid-user
 
 10. service apache2 restart
 
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 16. Karena dirasa kurang profesional, maka setiap Bibah mengunjungi IP PROBOLINGGO akan dialihkan secara otomatis ke http://semeruc10.pw.
 Jawab : <br />
@@ -650,7 +650,7 @@ Redirect / "http://semeruc10.pw/"
 
 ![image](https://user-images.githubusercontent.com/57977401/99069689-d0770200-25e9-11eb-8acc-47510df62e9d.png)
 
-<br /><br /><br />
+<br /><br /><br /><br />
 
 #### 17. Karena pengunjung pada /var/www/penanjakan.semeruc10.pw/public/images sangat banyak maka semua request gambar yang memiliki substring “semeru” akan diarahkan menuju semeru.jpg.
 Jawab : <br />
@@ -664,7 +664,7 @@ RewriteRule ^ http://penanjakan.semeruc10.pw/public/images/semeru.jpg
 
 ![image](https://user-images.githubusercontent.com/57977401/99069816-0916db80-25ea-11eb-8d67-9e99737e31fc.png)
 
-3. service apache2 restart<br />
+3. service apache2 restart<br /><br />
 
 **Testing**<br />
 1. Masuk pada penanjakan.semeruc10.pw/public/images
