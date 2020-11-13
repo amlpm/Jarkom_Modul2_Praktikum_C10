@@ -200,8 +200,8 @@ gunung	IN	NS	ns1
 ![image](https://user-images.githubusercontent.com/57977401/99041803-93e5df00-25c6-11eb-8736-f78528b2297b.png)
 
 3. nano /etc/bind/named.conf.options
-4. Tambahkan konfigurasi di bawah lalu di save
-comment dnssec-validation auto; 
+4. Tambahkan konfigurasi di bawah lalu di save<br />
+comment dnssec-validation auto; <br />
 tambahkan allow-query{any;};
 ```
 # dnssec-validation auto; 
@@ -226,8 +226,8 @@ zone "gunung.semeruc10.pw" {
 ![image](https://user-images.githubusercontent.com/57977401/99041803-93e5df00-25c6-11eb-8736-f78528b2297b.png)
 
 3. nano /etc/bind/named.conf.options
-4. Tambahkan konfigurasi di bawah lalu di save
-comment dnssec-validation auto; 
+4. Tambahkan konfigurasi di bawah lalu di save<br />
+comment dnssec-validation auto; <br />
 tambahkan allow-query{any;};
 ```
 # dnssec-validation auto; 
@@ -243,7 +243,7 @@ allow-query{any;};
 - Ubah seluruh string localhost menjadi gunung.semeruc10.pw
 - Tambahkan konfigurasi di bawah lalu di save
 ```
-@	    IN	NS	gunung.semeruc10.pw
+@	    IN  NS	gunung.semeruc10.pw
 @       IN  A   10.151.77.92 ; IP PROBOLINGGO
 ```
 
@@ -299,7 +299,7 @@ ServerAlias www.semeruc10.pw
 6. cd /var/www
 7. wget 10.151.36.202/semeru.pw.zip untuk mendapatkan folder semeru.pw.zip
 8. unzip semeru.pw.zip
-9. Rename semeru.pw menjadi semeruc20.pw dengan command mv semeru.pw semeruc10.pw
+9. Rename semeru.pw menjadi semeruc10.pw dengan command mv semeru.pw semeruc10.pw
 
 ![image](https://user-images.githubusercontent.com/57977401/99056293-11b0e700-25d5-11eb-8de8-0dee7112222d.png)
 
@@ -336,12 +336,11 @@ Buka semeruc10.pw/home, akan muncul halaman seperti dibawah
 <br /><br /><br />
 
 #### 10. Web http://penanjakan.semeruc10.pw akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot pada /var/www/penanjakan.semeruc10.pw dan memiliki struktur folder sebagai berikut:
-/var/www/penanjakan.semeruc10.pw
-
-/public/javascripts
-/public/css
-/public/images
-/errors
+/var/www/penanjakan.semeruc10.pw<br />
+/public/javascripts<br />
+/public/css<br />
+/public/images<br />
+/errors<br />
 Jawab : <br />
 1. cd /etc/apache2/sites-available
 2. cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/penanjakan.semeruc10.pw.conf
@@ -367,7 +366,8 @@ ServerName penanjakan.semeruc10.pw
 **Testing**<br />
 Buka penanjakan.semeruc10.pw, akan muncul halaman seperti dibawah
 
-![image](https://user-images.githubusercontent.com/57977401/99056660-9a2f8780-25d5-11eb-9b87-2e7f0d38ab37.png)
+![image](https://user-images.githubusercontent.com/57977401/99070638-9444a100-25eb-11eb-9b8a-68ee0a0022d9.png)
+
 <br /><br /><br />
 
 #### 11. Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan.
@@ -385,6 +385,11 @@ Jawab : <br />
 ```
 
 ![image](https://user-images.githubusercontent.com/57977401/99060812-9141b480-25db-11eb-8ce7-17cab1bac3d9.png)
+
+Keterangan :<br />
+- ```<Directory /x> ... </Directory>``` Untuk mengatur directory pada sebuah web<br />
+- Apabila di dalam tag directory berupa, Options +Indexes maka semua folder dan file di dalam directory tersebut dapat diakses<br />
+- Apabila di dalam tag directory berupa, Options -Indexes maka semua folder dan file di dalam directory tersebut dapat diakses<br />
 
 3. service apache2 restart
 
