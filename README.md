@@ -1,9 +1,11 @@
  # Jarkom_Modul2_Praktikum_C10
 
 ### Kelompok C_10
-### Asisten Dosen Bella Septina 
-### Adrian Danindra 05111840000068
-### Amelia Puji     05111840000147
+#### Asisten Dosen Bella Septina 
+#### Adrian Danindra 05111840000068
+#### Amelia Puji     05111840000147 
+
+<br />
 
 #### Konfigurasi pada Topologi.sh
 
@@ -18,7 +20,7 @@ xterm -T PROBOLINGGO -e linux ubd0=PROBOLINGGO ,jarkom umid=PROBOLINGGO eth0=dae
 
 xterm -T SIDOARJO -e linux ubd0=SIDOARJO,jarkom umid=SIDOARJO eth0=daemon,,,switch1 mem=96M &
 xterm -T GRESIK -e linux ubd0=GRESIK,jarkom umid=GRESIK eth0=daemon,,,switch1 mem=96M &
-<br /><br />
+<br /><br /><br />
 
 
 #### 1. Alamat http://semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
