@@ -292,15 +292,27 @@ Jawab : <br />
 ServerName semeruc10.pw
 ServerAlias www.semeruc10.pw
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99056203-f1812800-25d4-11eb-8a8e-0686215a728e.png)
+
 5. a2ensite semeruc10.pw
 6. cd /var/www
-7. wget 10.151.36.202/semeru.pw.zip
+7. wget 10.151.36.202/semeru.pw.zip untuk mendapatkan folder semeru.pw.zip
 8. unzip semeru.pw.zip
-9. mv semeru.pw semeruc10.pw
+9. Rename semeru.pw menjadi semeruc20.pw dengan command mv semeru.pw semeruc10.pw
+
+![image](https://user-images.githubusercontent.com/57977401/99056293-11b0e700-25d5-11eb-8de8-0dee7112222d.png)
+
 10. service apache2 restart
 
+**Testing**<br />
+Buka semeruc10.pw, akan muncul halaman seperti dibawah
+
+![image](https://user-images.githubusercontent.com/57977401/99056459-4a50c080-25d5-11eb-93f0-d7307d870380.png)
+<br /><br /><br />
+
 #### 9. Diaktifkan mod rewrite agar urlnya menjadi http://semeruc10.pw/home.
-Jawab : 
+Jawab : <br />
 1. Jalankan perintah a2enmod rewrite untuk mengaktifkan module rewrite
 2. nano cd/var/www/semeruc10.pw/.htaccess
 3. Tambahkan konfigurasi di bawah lalu di save
@@ -311,7 +323,17 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L,QSA]
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99056589-78ce9b80-25d5-11eb-8414-f70ea7bb8db4.png)
+
 4. service apache2 restart
+
+**Testing**<br />
+Buka semeruc10.pw/home, akan muncul halaman seperti dibawah
+
+![image](https://user-images.githubusercontent.com/57977401/99056660-9a2f8780-25d5-11eb-9b87-2e7f0d38ab37.png)
+
+<br /><br /><br />
 
 #### 10. Web http://penanjakan.semeruc10.pw akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot pada /var/www/penanjakan.semeruc10.pw dan memiliki struktur folder sebagai berikut:
 /var/www/penanjakan.semeruc10.pw
@@ -320,7 +342,7 @@ RewriteRule ^(.*)$ index.php/$1 [L,QSA]
 /public/css
 /public/images
 /errors
-Jawab : 
+Jawab : <br />
 1. cd /etc/apache2/sites-available
 2. cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/penanjakan.semeruc10.pw.conf
 3. nano /etc/apache2/sites-available/penanjakan.semeruc10.pw.conf
@@ -329,15 +351,27 @@ Jawab :
 ```
 ServerName penanjakan.semeruc10.pw
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99056777-c3501800-25d5-11eb-907e-a9115559f65d.png)
+
 5. a2ensite penanjakan.semeruc10.pw
 6. service apache2 restart
-7. wget 10.151.36.202/penanjakan.semeru.pw.zip
+7. wget 10.151.36.202/penanjakan.semeru.pw.zip untuk mendapatkan folder penanjakan.semeru.pw.zip
 8. unzip penanjakan.semeru.pw.zip
-9. mv penanjakan.semeru.pw penanjakan.semeruc10.pw
+9. Ubah folder yang sudah di download menjadi penanjakan.semeruc10.pw dengan command mv penanjakan.semeru.pw penanjakan.semeruc10.pw
+
+![image](https://user-images.githubusercontent.com/57977401/99056293-11b0e700-25d5-11eb-8de8-0dee7112222d.png)
+
 10. service apache2 restart
 
+**Testing**<br />
+Buka penanjakan.semeruc10.pw, akan muncul halaman seperti dibawah
+
+![image](https://user-images.githubusercontent.com/57977401/99056660-9a2f8780-25d5-11eb-9b87-2e7f0d38ab37.png)
+<br /><br /><br />
+
 #### 11. Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan.
-Jawab : 
+Jawab : <br />
 1. nano /etc/apache2/sites-available/penanjakan.semeruc10.pw.conf
 2. Tambahkan konfigurasi di bawah lalu di save
 ```
@@ -349,10 +383,35 @@ Jawab :
     Options -Indexes
 </Directory>
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99060812-9141b480-25db-11eb-8ce7-17cab1bac3d9.png)
+
 3. service apache2 restart
 
+**Testing**<br />
+1. Buka penanjakan.semeruc10.pw/public/css
+
+![image](https://user-images.githubusercontent.com/57977401/99061219-2c3a8e80-25dc-11eb-92f7-75711880a4d2.png)
+
+2. Buka penanjakan.semeruc10.pw/public/images
+
+![image](https://user-images.githubusercontent.com/57977401/99061252-3e1c3180-25dc-11eb-8c22-b59c360623fa.png)
+
+3. Buka penanjakan.semeruc10.pw/public/javascripts
+
+![image](https://user-images.githubusercontent.com/57977401/99061257-407e8b80-25dc-11eb-9b20-55a5ef92685f.png)
+
+apabila ketiganya tidak dapat diakses, maka konfigurasi selesai
+
+4. Buka penanjakan.semeruc10.pw/public/
+
+![image](https://user-images.githubusercontent.com/57977401/99061400-71f75700-25dc-11eb-98f3-8014d235ad10.png)
+
+Apabila folder public dapat diakses, maka maka konfigurasi selesai
+<br /><br /><br />
+
 #### 12. Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
-Jawab : 
+Jawab : <br />
 **Untuk Sites penanjakan.semeruc10.pw.**
 1. nano penanjakan.semeruc10.pw.conf 
 2. Tambahkan konfigurasi di bawah lalu di save
@@ -372,24 +431,58 @@ ErrorDocument 404 http://penanjakan.semeruc10.pw/errors/404.html
 ```
 3. service apache2 restart
 
+**Testing**<br />
+1. Buka semeruc10.pw/hehehe
+2. Buka penanjakan.semeruc10.pw/aaa
+3. Buka naik.gunung.semeruc10.pw/aaa
+
+![image](https://user-images.githubusercontent.com/57977401/99061613-cb5f8600-25dc-11eb-98fc-00b44f092d5d.png)
+
+Ketiganya menghasilkan halaman error yang sama seperti yang ditampilkan diatas, maka konfigurasi sudah terhitung benar
+<br /><br /><br />
+
 #### 13. Untuk mengakses file assets javascript awalnya harus menggunakan url http://penanjakan.semeruc10.pw/public/javascripts. Karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi http://penanjakan.semeruc10.pw/js.
-Jawab : 
-1. nano (file .conf yang ingin dibuka)
+Jawab : <br />
+1. nano penanjakan.semeruc10.pw.conf
 2. Tambahkan konfigurasi di bawah lalu di save
 ```
 Alias "/js" "/var/www/penanjakan.semeruc10.pw/public/javascripts"
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99062085-65273300-25dd-11eb-9c40-0084f6abc663.png)
+
 3. cd /var/www/penanjakan.semeruc10.pw/public/javascripts/
-4. touch app.js
+4. Masukkan command touch app.js
 5. service apache2 restart
 
+**Testing**<br />
+1. nano penanjakan.semeruc10.pw.conf
+2. Ganti konfigurasi speerti di bawah agar direktori public/javascripts dapat diakses
+``` 
+<Directory /var/www/penanjakan.semeruc10.pw/public/*>
+    Options -Indexes
+</Directory>
+```
+Menjadi 
+```
+<Directory /var/www/penanjakan.semeruc10.pw/public/*>
+    Options +Indexes
+</Directory>
+```
+3. Service apache2 restart
+4. Ketikkan penanjakan.semeruc10.pw/js pada chrome
+5. Hasilnya dapat dilihat seperti dibawah, bahwa direktori pulic/javascripts dapat dibuka menggunakan Alias /js, maka konfigurasi sudah benar
+
+![image](https://user-images.githubusercontent.com/57977401/99062691-52612e00-25de-11eb-82a3-747831ded7d9.png)
+<br /><br /><br />
+
 #### 14. Sedangkan web http://naik.gunung.semeruc10.pw sudah bisa diakses hanya dengan menggunakan port 8888. DocumentRoot web berada pada /var/www/naik.gunung.semeruc10.pw. 
-Jawab : 
+Jawab : <br />
 1. cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/naik.gunung.semeruc10.pw
 2. nano /etc/apache2/sites-available/naik.gunung.semeruc10.pw
 3. Tambahkan konfigurasi di bawah lalu di save 
 - Mengganti port menjadi 8888 pada virtual host
-- DocumentRoot menjadi /var/www/naik.gunung.semeruc10.pw
+- Mengganti DocumentRoot menjadi /var/www/naik.gunung.semeruc10.pw
 ```
  ServerName naik.gunung.semeruc10.pw
  ServerAlias www.naik.gunung.semeruc10.pw
@@ -397,21 +490,38 @@ Jawab :
      Options +Indexes
  </Directory>
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99062769-702e9300-25de-11eb-92ff-47664a635d5e.png)
+
 4. Kembali ke /etc/apache2 dengan command cd ..
 5. nano ports.conf
 6. Tambahkan konfigurasi di bawah (dibawah Listen 80) lalu di save 
 ```
 Listen 8888
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99063185-11b5e480-25df-11eb-96ed-1da02b77ed8a.png)
+
 7. cd /var/www/
-8. wget 10.151.36.202/naik.gunung.semeru.pw.zip
+8. wget 10.151.36.202/naik.gunung.semeru.pw.zip  untuk mendapatkan folder naik.gunung.semeru.pw
 9. unzip naik.gunung.semeru.pw.zip
-10. mv naik.gunung.semeru.pw naik.gunung.semeruc10.pw
-11. a2ensite naik.gunung.semeruc10.pw
+10. Rename naik.gunung.semeru.pw menjadi naik.gunung.semeru.pw naik.gunung.semeruc10.pw dengan command mv naik.gunung.semeru.pw naik.gunung.semeruc10.pw 
+
+![image](https://user-images.githubusercontent.com/57977401/99063613-b33d3600-25df-11eb-8c23-782e5d58828c.png)
+
+11. a2ensite naik.gunung.semeruc10.pw untuk mengaktifkan site naik.gunung.semeruc10.pw
 12. service apache2 restart
 
+**Testing**<br />
+1. Buka naik.gunung.semeruc10.pw:8888
+2. Apabila tampilan site sudah seperti dibawah, maka konfigurasi berhasil
+
+![image](https://user-images.githubusercontent.com/57977401/99069151-c7396580-25e8-11eb-892c-c80e16ce83c6.png)
+
+<br /><br /><br />
+
 #### 15. Dikarenakan web http://naik.gunung.semeruc10.pw bersifat private, harus membuat web http://naik.gunung.semeruc10.pw agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung”
-Jawab : 
+Jawab : <br />
 1. nano /etc/apache2/sites-available/000-default.conf
 2. Tambahkan konfigurasi di bawah lalu di save 
 ```
@@ -422,6 +532,9 @@ Jawab :
     Require valid-user
 </Directory>
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99068772-18952500-25e8-11eb-9a3b-f8cf80403437.png)
+
 3. nano /etc/apache2/apache2.conf
 4. Mencari directory tag dengan directory tujuan /var/www
 5. Ubah konfigurasi seperti di bawah lalu di save 
@@ -433,6 +546,9 @@ Jawab :
     Require all granted
 </Directory>
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99068888-45493c80-25e8-11eb-82d7-cd29eb6a3baa.png)
+
 6. Membuat username dan password dengan perintah sebagai di bawah
 ```
 htpasswd -c .htpasswd semeru
@@ -443,6 +559,11 @@ Keterangan :
 - .htpacces adalah file password tersembunyi (karena memakai .)
 - semeru merupakan username yang ingin ditambahkan
 7. Masukkan password dan konfirmasi password
+
+![image](https://user-images.githubusercontent.com/57977401/99068984-7164bd80-25e8-11eb-88dc-9fa02c8cdca6.png)
+
+![image](https://user-images.githubusercontent.com/57977401/99069003-7fb2d980-25e8-11eb-8bc1-99c414009e5b.png)
+
 8. nano /var/www/naik.gunung.semeruc10.pw/.htaccess
 9. Tambahkan konfigurasi di bawah lalu di save 
 ```
@@ -451,18 +572,44 @@ AuthName "Restricted Content"
 AuthUserFile /etc/apache2/.htpasswd
 Require valid-user
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99069096-affa7800-25e8-11eb-93d4-4d563f9a5a96.png)
+
+**Testing**<br />
+1. Buka naik.gunung.semeruc10.pw:8888
+2. Apabila tampilan site sudah seperti dibawah, maka konfigurasi untuk authentifikasi berhasil
+
+![image](https://user-images.githubusercontent.com/57977401/99069331-1e3f3a80-25e9-11eb-9be9-ba32515404cf.png)
+
+3. Masukkan semeru sebagai username dan kuynaikgunung sebagai password
+4. Apabila tampilan site sudah seperti dibawah (bisa masuk), maka authentifikasi berhasil
+
+![image](https://user-images.githubusercontent.com/57977401/99069151-c7396580-25e8-11eb-892c-c80e16ce83c6.png)
+
 10. service apache2 restart
 
+<br /><br /><br />
+
 #### 16. Karena dirasa kurang profesional, maka setiap Bibah mengunjungi IP PROBOLINGGO akan dialihkan secara otomatis ke http://semeruc10.pw.
-Jawab : 
+Jawab : <br />
 1. nano /etc/apache2/sites-available/000-default.conf
 2. Tambahkan konfigurasi di bawah lalu di save 
 ```
 Redirect / "http://semeruc10.pw/"
 ```
 
+![image](https://user-images.githubusercontent.com/57977401/99069570-91e14780-25e9-11eb-9f24-fdc6974e1667.png)
+
+**Testing**<br />
+1. Ketik IP PROBOLINGGO C10 pada chrome (10.151.77.92)
+2. Apabila tampilan site sudah seperti dibawah, maka konfigurasi redirect berhasil
+
+![image](https://user-images.githubusercontent.com/57977401/99069689-d0770200-25e9-11eb-8acc-47510df62e9d.png)
+
+<br /><br /><br />
+
 #### 17. Karena pengunjung pada /var/www/penanjakan.semeruc10.pw/public/images sangat banyak maka semua request gambar yang memiliki substring “semeru” akan diarahkan menuju semeru.jpg.
-Jawab : 
+Jawab : <br />
 1. nano /var/www/penanjakan.semeruc10.pw/.htaccess
 2. Tambahkan konfigurasi di bawah lalu di save 
 ```
@@ -470,4 +617,14 @@ RewriteCond %{REQUEST_URI} !^/public/images/semeru.jpg
 RewriteCond %{REQUEST_URI} ^/public/images/(.*)semeru(.*).jpg
 RewriteRule ^ http://penanjakan.semeruc10.pw/public/images/semeru.jpg
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99069816-0916db80-25ea-11eb-8d67-9e99737e31fc.png)
+
 3. service apache2 restart
+
+**Testing**<br />
+1. Masuk pada penanjakan.semeruc10.pw/public/images
+2. Klik pada gambar yang miliki substring semeru (dalam hal ini hanya bukansemeruaja.jpg)
+3. Apabila mengarah pada gambar semeru.jpg seperti di bawah, makan konfigurasi .htaccess berhasil
+
+![image](https://user-images.githubusercontent.com/57977401/99069977-57c47580-25ea-11eb-955d-ba5f477e0d1d.png)
