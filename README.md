@@ -24,6 +24,7 @@ xterm -T GRESIK -e linux ubd0=GRESIK,jarkom umid=GRESIK eth0=daemon,,,switch1 me
 #### 1. Alamat http://semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
 Jawab : 
 **Pada UML MALANG**
+
 1. nano /etc/bind/named.conf.local
 2. Tambahkan konfigurasi di bawah lalu di save
 ```
@@ -40,6 +41,7 @@ zone "semeruc10.pw" {
 6. nano /etc/bind/semeruc10/semeruc10.pw
 7. Tambahkan konfigurasi di bawah lalu di save
 - Ubah seluruh string localhost menjadi semeruc10.pw
+- Tambahkan konfigurasi dibawah
 ```
 @	    IN	NS	semeruc10.pw.
 @       IN  A   10.151.77.92 ; IP PROBOLINGGO
@@ -49,7 +51,8 @@ zone "semeruc10.pw" {
 
 8. Service bind9 restart
  
-##### Testing pada Klien
+#### Testing pada Klien
+
 Pada UML GRESIK atau UML SIDOARJO, ping semeruc10.pw atau host -t A semeruc10.pw. Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99042125-2edeb900-25c7-11eb-9f2b-be483f4ecb66.png)
@@ -59,26 +62,28 @@ Pada UML GRESIK atau UML SIDOARJO, ping semeruc10.pw atau host -t A semeruc10.pw
 #### 2. Alias http://www.semeruc10.pw 
 Jawab : 
 **Pada UML MALANG**
+
 1. nano /etc/bind/semeruc10/semeruc10.pw
 2. Tambahkan konfigurasi di bawah lalu di save
 ```
-www		    IN	CNAME	semeruc10.pw.
+www     IN	    CNAME	   semeruc10.pw.
 ```
 
 ![image](https://user-images.githubusercontent.com/57977401/99041943-cdb6e580-25c6-11eb-8c99-cbd345d0ec3f.png)
 
 3. Service bind9 restart
 
-###### Testing pada Klien
+#### Testing pada Klien
 Pada UML GRESIK atau UML SIDOARJO, ping www.semeruc10.pw atau host -t CNAME www.semeruc10.pw. Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99042351-8c730580-25c7-11eb-95cb-ce4e3dd4111c.png)
 
 
 
-#### 3.subdomain http://penanjakan.semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
+#### 3.Subdomain http://penanjakan.semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
 Jawab : 
 **Pada UML MALANG**
+
 1. nano /etc/bind/semeruc10/semeruc10.pw
 2. Tambahkan konfigurasi di bawah lalu di save
 ```
