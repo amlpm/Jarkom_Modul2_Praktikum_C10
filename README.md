@@ -437,7 +437,7 @@ ErrorDocument 404 http://penanjakan.semeruc10.pw/errors/404.html
 Gambar untuk konfigurasi Error 404 dapat dilihat dibawah : <br />
 - 000-default
 
-![image](https://user-images.githubusercontent.com/57977401/99071327-e2a66f80-25ec-11eb-9c90-28c1d91db466.png)
+![image](https://user-images.githubusercontent.com/57977401/99072520-2bf7be80-25ef-11eb-9498-cf0d7367699d.png)
 
 - semeruc10.pw.
 
@@ -468,7 +468,7 @@ Jawab : <br />
 Alias "/js" "/var/www/penanjakan.semeruc10.pw/public/javascripts"
 ```
 
-![image](https://user-images.githubusercontent.com/57977401/99062085-65273300-25dd-11eb-9c40-0084f6abc663.png)
+![image](https://user-images.githubusercontent.com/57977401/99072637-606b7a80-25ef-11eb-8cf2-94c96fbe07db.png)
 
 3. cd /var/www/penanjakan.semeruc10.pw/public/javascripts/
 4. Masukkan command touch app.js
@@ -505,6 +505,7 @@ Jawab : <br />
 ```
  ServerName naik.gunung.semeruc10.pw
  ServerAlias www.naik.gunung.semeruc10.pw
+
  <Directory /var/www/naik.gunung.semeruc10.pw>
      Options +Indexes
  </Directory>
@@ -519,7 +520,7 @@ Jawab : <br />
 Listen 8888
 ```
 
-![image](https://user-images.githubusercontent.com/57977401/99063185-11b5e480-25df-11eb-96ed-1da02b77ed8a.png)
+![image](https://user-images.githubusercontent.com/57977401/99072762-9d377180-25ef-11eb-8a9f-965c5b5bf90b.png)
 
 7. cd /var/www/
 8. wget 10.151.36.202/naik.gunung.semeru.pw.zip  untuk mendapatkan folder naik.gunung.semeru.pw
@@ -570,7 +571,7 @@ Jawab : <br />
 </Directory>
 ```
 
-![image](https://user-images.githubusercontent.com/57977401/99068888-45493c80-25e8-11eb-82d7-cd29eb6a3baa.png)
+![image](https://user-images.githubusercontent.com/57977401/99072965-fc958180-25ef-11eb-97ad-82537cfba063.png)
 
 6. Membuat username dan password dengan perintah sebagai di bawah
 ```
