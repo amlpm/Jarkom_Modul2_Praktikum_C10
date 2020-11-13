@@ -357,7 +357,7 @@ ServerName penanjakan.semeruc10.pw
 6. service apache2 restart
 7. wget 10.151.36.202/penanjakan.semeru.pw.zip untuk mendapatkan folder penanjakan.semeru.pw.zip
 8. unzip penanjakan.semeru.pw.zip
-9. Ubah folder yang sudah di download menjadi penanjakan.semeruc10.pw dengan command mv penanjakan.semeru.pw penanjakan.semeruc10.pw
+9. Rename penanjakan.semeru.pw menjadi penanjakan.semeruc10.pw dengan command mv penanjakan.semeru.pw penanjakan.semeruc10.pw 
 
 ![image](https://user-images.githubusercontent.com/57977401/99056293-11b0e700-25d5-11eb-8de8-0dee7112222d.png)
 
@@ -388,8 +388,8 @@ Jawab : <br />
 
 Keterangan :<br />
 - ```<Directory /x> ... </Directory>``` Untuk mengatur directory pada sebuah web<br />
-- Apabila di dalam tag directory berupa, Options +Indexes maka semua folder dan file di dalam directory tersebut dapat diakses<br />
-- Apabila di dalam tag directory berupa, Options -Indexes maka semua folder dan file di dalam directory tersebut dapat diakses<br />
+- Apabila di dalam tag directory berupa ```Options +Indexes```, maka semua folder dan file di dalam directory tersebut dapat diakses<br />
+- Apabila di dalam tag directory berupa ```Options -Indexes```, maka semua folder dan file di dalam directory tersebut dapat diakses<br />
 
 3. service apache2 restart
 
@@ -423,17 +423,31 @@ Jawab : <br />
 ```
 ErrorDocument 404 /errors/404.html
 ```
+
+![image](https://user-images.githubusercontent.com/57977401/99071303-d3bfbd00-25ec-11eb-9680-96961612109d.png)
+
 3. service apache2 restart
 
 **Untuk Sites selain penanjakan.semeruc10.pw**
-- 000-default
-- semeruc10.pw.
-- naik.gunung.c10.pw
 1. nano (file .conf yang ingin dibuka)
 2. Tambahkan konfigurasi di bawah lalu di save
 ```
 ErrorDocument 404 http://penanjakan.semeruc10.pw/errors/404.html
 ```
+Gambar untuk konfigurasi Error 404 dapat dilihat dibawah : <br />
+- 000-default
+
+![image](https://user-images.githubusercontent.com/57977401/99071327-e2a66f80-25ec-11eb-9c90-28c1d91db466.png)
+
+- semeruc10.pw.
+
+![image](https://user-images.githubusercontent.com/57977401/99071450-1c777600-25ed-11eb-9590-f1baf3cb9b06.png)
+
+- naik.gunung.c10.pw
+
+![image](https://user-images.githubusercontent.com/57977401/99071355-f356e580-25ec-11eb-9716-7ebe7dd2679d.png)
+
+
 3. service apache2 restart
 
 **Testing**<br />
@@ -510,7 +524,7 @@ Listen 8888
 7. cd /var/www/
 8. wget 10.151.36.202/naik.gunung.semeru.pw.zip  untuk mendapatkan folder naik.gunung.semeru.pw
 9. unzip naik.gunung.semeru.pw.zip
-10. Rename naik.gunung.semeru.pw menjadi naik.gunung.semeru.pw naik.gunung.semeruc10.pw dengan command mv naik.gunung.semeru.pw naik.gunung.semeruc10.pw 
+10. Rename naik.gunung.semeru.pw menjadi naik.gunung.semeruc10.pw dengan command mv naik.gunung.semeru.pw naik.gunung.semeruc10.pw 
 
 ![image](https://user-images.githubusercontent.com/57977401/99063613-b33d3600-25df-11eb-8c23-782e5d58828c.png)
 
@@ -522,6 +536,10 @@ Listen 8888
 2. Apabila tampilan site sudah seperti dibawah, maka konfigurasi berhasil
 
 ![image](https://user-images.githubusercontent.com/57977401/99069151-c7396580-25e8-11eb-892c-c80e16ce83c6.png)
+
+- Kami menambahkan directory listing pada konfigurasi naik.gunung.semeruc10.pw.conf dengan command sebagai berikut. Tujuannya karena ingin melihat directory di dalam naik.gunung.semeruc10.pw saja tanpa ada tujuan lain
+
+![image](https://user-images.githubusercontent.com/57977401/99071853-e2f33a80-25ed-11eb-8e14-12820c39e85a.png)
 
 <br /><br /><br />
 
@@ -579,6 +597,18 @@ Require valid-user
 ```
 
 ![image](https://user-images.githubusercontent.com/57977401/99069096-affa7800-25e8-11eb-93d4-4d563f9a5a96.png)
+
+- Keterangan mengenai konfigurasi dibawah (pada /var/www/naik.gunung.semeruc10.pw/.htaccess dan /etc/apache2/sites-available/000-default.conf) :
+```
+AuthType Basic
+AuthName "Restricted Content"
+AuthUserFile /etc/apache2/.htpasswd
+Require valid-user
+```
+- AuthType Basic merupakan pemberitahuan bahwa authentication bersifat basic <br />
+- AuthName merupakan pemilihan nama realm yang akan ditampilkan kepada pengguna saat meminta kredensial<br />
+- AuthUserFile merupakan path dari file password yang sudah kita buat, yaitu di /etc/apache2/.htpasswd. Ini untuk mengarahkan Apache ke file kata sandi yang kita buat<br />
+- Require valid-user menunjukkan bahwa kita membutuhkan pengguna yang valid untuk mengakses sumber daya ini, yang berarti siapa pun yang dapat memverifikasi identitas mereka dengan kata sandi akan diizinkan masuk<br />
 
 **Testing**<br />
 1. Buka naik.gunung.semeruc10.pw:8888
