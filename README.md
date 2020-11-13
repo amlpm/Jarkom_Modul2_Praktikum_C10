@@ -103,7 +103,7 @@ Karena sudah mengarah pada PROBOLINGGO, maka subdomain penanjakan.semeruc10.pw b
 Jawab : <br />
 **Pada UML MALANG**
 1. nano /etc/bind/named.conf.local
-2. Tambahkan 
+2. Tambahkan Tambahkan konfigurasi di bawah lalu di save
 ```
 zone "77.151.10.in-addr.arpa" {
     type master;
@@ -117,6 +117,7 @@ zone "77.151.10.in-addr.arpa" {
 4. nano /etc/bind/semeruc10/77.151.10.in-addr.arpa
 5. Tambahkan konfigurasi di bawah lalu di save
 - Ubah seluruh string localhost menjadi semeruc10.pw
+- Tambahkan konfigurasi di bawah lalu di save
 ```
 77.151.10.in-addr.arpa.	IN	NS      semeruc10.pw.
 92                      IN  PTR     semeruc10.pw.
@@ -188,9 +189,9 @@ service bind9 stop
 
 #### 6. Subdomain dengan alamat http://gunung.semeruC10.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.
 Jawab : <br />
-**Pada UML MALANG**
-4. nano /etc/bind/semeruc10/semeruc10.pw
-5. Tambahkan konfigurasi di bawah lalu di save
+**Pada UML MALANG**<br />
+1. nano /etc/bind/semeruc10/semeruc10.pw
+2. Tambahkan konfigurasi di bawah lalu di save
 ```
 ns1		IN	A	10.151.77.91  ; IP PROBOLINGGO
 gunung	IN	NS	ns1
@@ -198,8 +199,8 @@ gunung	IN	NS	ns1
 
 ![image](https://user-images.githubusercontent.com/57977401/99041803-93e5df00-25c6-11eb-8736-f78528b2297b.png)
 
-6. nano /etc/bind/named.conf.options
-7. Tambahkan konfigurasi di bawah lalu di save
+3. nano /etc/bind/named.conf.options
+4. Tambahkan konfigurasi di bawah lalu di save
 comment dnssec-validation auto; 
 tambahkan allow-query{any;};
 ```
@@ -209,7 +210,7 @@ allow-query{any;};
 
 ![image](https://user-images.githubusercontent.com/57977401/99046720-20e06680-25ce-11eb-8c71-852c725f07bc.png)
 
-6. Service bind9 restart
+5. Service bind9 restart
 
 **Pada UML MOJOKERTO**
 1. nano /etc/bind/named.conf.local
@@ -240,6 +241,7 @@ allow-query{any;};
 7. nano /etc/bind/delegasi/gunung.semeruc10.pw
 8. Tambahkan konfigurasi di bawah lalu di save
 - Ubah seluruh string localhost menjadi gunung.semeruc10.pw
+- Tambahkan konfigurasi di bawah lalu di save
 ```
 @	    IN	NS	gunung.semeruc10.pw
 @       IN  A   10.151.77.92 ; IP PROBOLINGGO
