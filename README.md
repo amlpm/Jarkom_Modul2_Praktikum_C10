@@ -22,7 +22,7 @@ xterm -T GRESIK -e linux ubd0=GRESIK,jarkom umid=GRESIK eth0=daemon,,,switch1 me
 
 
 #### 1. Alamat http://semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
-Jawab : 
+Jawab : <br />
 **Pada UML MALANG**
 
 1. nano /etc/bind/named.conf.local
@@ -51,7 +51,7 @@ zone "semeruc10.pw" {
 
 8. Service bind9 restart
  
-#### Testing pada Klien
+**Testing pada Klien**<br />
 
 Pada UML GRESIK atau UML SIDOARJO, ping semeruc10.pw atau host -t A semeruc10.pw. Hasilnya adalah sebagai berikut
 
@@ -71,7 +71,7 @@ www     IN	    CNAME	   semeruc10.pw.
 
 3. Service bind9 restart
 
-#### Testing pada Klien
+**Testing pada Klien**<br />
 Pada UML GRESIK atau UML SIDOARJO, ping www.semeruc10.pw atau host -t CNAME www.semeruc10.pw. Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99042351-8c730580-25c7-11eb-95cb-ce4e3dd4111c.png)
@@ -91,7 +91,7 @@ penanjakan	IN	A	10.151.77.92  ; IP PROBOLINGGO
 
 4. Service bind9 restart
 
-###### Testing pada Klien
+**Testing pada Klien**<br />
 Pada UML GRESIK atau UML SIDOARJO, ping penanjakan.semeruc10.pw atau host -t A penanjakan.semeruc10.pw. Hasilnya adalah sebagai 
 
 ![image](https://user-images.githubusercontent.com/57977401/99048219-3ce50780-25d0-11eb-8936-f3ed8777ee58.png)
@@ -126,7 +126,7 @@ zone "77.151.10.in-addr.arpa" {
 
 6. Service bind9 restart
 
-###### Testing pada Klien
+**Testing pada Klien**<br />
 Pada UML GRESIK atau UML SIDOARJO, masukkan command host -t PTR 10.151.77.92. Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99044639-08228180-25cb-11eb-82ad-ef39ab3f4f28.png)
@@ -168,7 +168,7 @@ zone "semeruc10.pw" {
 
 3. Service bind9 restart
 
-##### Testing
+**Testing pada Klien**<br />
 1. Matikan service bind9 pada UML MALANG dengan command
 ```
 service bind9 stop
@@ -249,7 +249,7 @@ allow-query{any;};
 
 9. Service bind9 restart
 
-##### Testing pada Klien
+**Testing pada Klien**<br />
 Pada UML GRESIK atau UML SIDOARJO, ping gunung.semeruc10.pw atau host -t A gunung.semeruc10.pw. Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99047524-49b52b80-25cf-11eb-9905-a00c89b98fd5.png)
@@ -271,7 +271,7 @@ naik	IN	A	10.151.77.92
 
 3. Service bind9 restart
 
-##### Testing pada Klien
+**Testing pada Klien**<br />
 Pada UML GRESIK atau UML SIDOARJO, ping gunung.semeruc10.pw atau host -t A gunung.semeruc10.pw. Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99047938-e24bab80-25cf-11eb-8045-09b7660ad752.png)
