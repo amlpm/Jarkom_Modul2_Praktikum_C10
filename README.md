@@ -18,7 +18,7 @@ xterm -T PROBOLINGGO -e linux ubd0=PROBOLINGGO ,jarkom umid=PROBOLINGGO eth0=dae
 
 xterm -T SIDOARJO -e linux ubd0=SIDOARJO,jarkom umid=SIDOARJO eth0=daemon,,,switch1 mem=96M &
 xterm -T GRESIK -e linux ubd0=GRESIK,jarkom umid=GRESIK eth0=daemon,,,switch1 mem=96M &
-
+<br /><br />
 
 
 #### 1. Alamat http://semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
@@ -56,13 +56,11 @@ zone "semeruc10.pw" {
 Pada UML GRESIK atau UML SIDOARJO, ping semeruc10.pw atau host -t A semeruc10.pw. Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99042125-2edeb900-25c7-11eb-9f2b-be483f4ecb66.png)
-
-
+<br /><br /><br />
 
 #### 2. Alias http://www.semeruc10.pw 
-Jawab : 
+Jawab : <br />
 **Pada UML MALANG**
-
 1. nano /etc/bind/semeruc10/semeruc10.pw
 2. Tambahkan konfigurasi di bawah lalu di save
 ```
@@ -77,11 +75,10 @@ www     IN	    CNAME	   semeruc10.pw.
 Pada UML GRESIK atau UML SIDOARJO, ping www.semeruc10.pw atau host -t CNAME www.semeruc10.pw. Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99042351-8c730580-25c7-11eb-95cb-ce4e3dd4111c.png)
-
-
+<br /><br /><br />
 
 #### 3.Subdomain http://penanjakan.semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
-Jawab : 
+Jawab : <br />
 **Pada UML MALANG**
 
 1. nano /etc/bind/semeruc10/semeruc10.pw
@@ -100,11 +97,10 @@ Pada UML GRESIK atau UML SIDOARJO, ping penanjakan.semeruc10.pw atau host -t A p
 ![image](https://user-images.githubusercontent.com/57977401/99048219-3ce50780-25d0-11eb-8936-f3ed8777ee58.png)
 
 Karena sudah mengarah pada PROBOLINGGO, maka subdomain penanjakan.semeruc10.pw berhasil dibuat
-
-
+<br /><br /><br />
 
 #### 4. Reverse domain untuk domain utama. 
-Jawab : 
+Jawab : <br />
 **Pada UML MALANG**
 1. nano /etc/bind/named.conf.local
 2. Tambahkan 
@@ -136,11 +132,10 @@ Pada UML GRESIK atau UML SIDOARJO, masukkan command host -t PTR 10.151.77.92. Ha
 ![image](https://user-images.githubusercontent.com/57977401/99044639-08228180-25cb-11eb-82ad-ef39ab3f4f28.png)
 
 Karena sudah mengarah ke semeruc10.pw, berarti reverese domain kita berhasil
-
-
+<br /><br /><br />
 
 #### 5. DNS Server Slave pada MOJOKERTO
-Jawab : 
+Jawab : <br />
 **Pada UML MALANG**
 1. nano /etc/bind/named.conf.local
 2. Tambahkan konfigurasi di bawah lalu di save
@@ -188,11 +183,11 @@ service bind9 stop
 3. ping semeruc10.pw atau host -t A semeruc10.pw. Apabila hasilnya seperti yang tertera dibawah, maka DNS Slave berhasil
 
 ![image](https://user-images.githubusercontent.com/57977401/99046351-96980280-25cd-11eb-8867-5947fb3fd035.png)
-
+<br /><br /><br />
 
 
 #### 6. Subdomain dengan alamat http://gunung.semeruC10.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.
-Jawab : 
+Jawab : <br />
 **Pada UML MALANG**
 4. nano /etc/bind/semeruc10/semeruc10.pw
 5. Tambahkan konfigurasi di bawah lalu di save
@@ -260,11 +255,11 @@ Pada UML GRESIK atau UML SIDOARJO, ping gunung.semeruc10.pw atau host -t A gunun
 ![image](https://user-images.githubusercontent.com/57977401/99047524-49b52b80-25cf-11eb-9905-a00c89b98fd5.png)
 
 Karena sudah mengarah ke server probolinggo, berarti Delegasi Domain berhasil
-
+<br /><br /><br />
 
 
 #### 7. Subdomain dengan nama http://naik.gunung.semeruc10.pw, domain ini diarahkan ke IP Server PROBOLINGGO. 
-Jawab : 
+Jawab : <br />
 **Pada UML MOJOKERTO**
 1. nano /etc/bind/delegasi/gunung.semeruc10.pw
 2. Tambahkan konfigurasi di bawah lalu di save
@@ -282,11 +277,10 @@ Pada UML GRESIK atau UML SIDOARJO, ping gunung.semeruc10.pw atau host -t A gunun
 ![image](https://user-images.githubusercontent.com/57977401/99047938-e24bab80-25cf-11eb-8045-09b7660ad752.png)
 
 Karena sudah mengarah ke server probolinggo, berarti subdomain berhasil
-
-
+<br /><br /><br />
 
 #### 8. Domain http://semeruc10.pw memiliki DocumentRoot pada /var/www/semeruc10.pw.
-Jawab : 
+Jawab : <br />
 1. cd /etc/apache2/sites-available
 2. cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/semeruc10.pw.conf
 3. nano /etc/apache2/sites-available/semeruc10.pw.conf
