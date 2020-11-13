@@ -55,7 +55,9 @@ zone "semeruc10.pw" {
 
 ![image](https://user-images.githubusercontent.com/57977401/99041943-cdb6e580-25c6-11eb-8c99-cbd345d0ec3f.png)
 
-8. Service bind9 restart<br />
+8. Service bind9 restart
+
+<br /><br />
  
 **Testing pada Klien**<br />
 
