@@ -55,15 +55,16 @@ zone "semeruc10.pw" {
 
 ![image](https://user-images.githubusercontent.com/57977401/99041943-cdb6e580-25c6-11eb-8c99-cbd345d0ec3f.png)
 
-8. Service bind9 restart
-
-<br /><br />
+8. Service bind9 restart<br /><br />
  
 **Testing pada Klien**<br />
 
-Pada UML GRESIK atau UML SIDOARJO, ping semeruc10.pw atau host -t A semeruc10.pw. Hasilnya adalah sebagai berikut
+Pada UML GRESIK atau UML SIDOARJO, ```ping semeruc10.pw``` atau ```host -t A semeruc10.pw``` <br />
+Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99042125-2edeb900-25c7-11eb-9f2b-be483f4ecb66.png)
+
+Karena sudah mengarah ke IP PROBOLINGGO, berarti konfigurasi domain berhasil
 <br /><br /><br /><br />
 
 #### 2. Alias http://www.semeruc10.pw 
@@ -80,10 +81,14 @@ www     IN	    CNAME	   semeruc10.pw.
 3. Service bind9 restart<br /><br />
 
 **Testing pada Klien**<br />
-Pada UML GRESIK atau UML SIDOARJO, ping www.semeruc10.pw atau host -t CNAME www.semeruc10.pw. Hasilnya adalah sebagai berikut
+Pada UML GRESIK atau UML SIDOARJO, ```ping www.semeruc10.pw``` atau ```host -t CNAME www.semeruc10.pw``` <br />
+Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99042351-8c730580-25c7-11eb-95cb-ce4e3dd4111c.png)
+
+Karena sudah mengarah ke semeruc10.pw, berarti alias kita berhasil
 <br /><br /><br /><br />
+
 
 #### 3.Subdomain http://penanjakan.semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
 Jawab : <br />
@@ -100,7 +105,8 @@ penanjakan	IN	A	10.151.77.92  ; IP PROBOLINGGO
 4. Service bind9 restart<br /><br />
 
 **Testing pada Klien**<br />
-Pada UML GRESIK atau UML SIDOARJO, ping penanjakan.semeruc10.pw atau host -t A penanjakan.semeruc10.pw. Hasilnya adalah sebagai 
+Pada UML GRESIK atau UML SIDOARJO, ```ping penanjakan.semeruc10.pw``` atau ```host -t A penanjakan.semeruc10.pw``` <br />
+Hasilnya adalah sebagai 
 
 ![image](https://user-images.githubusercontent.com/57977401/99048219-3ce50780-25d0-11eb-8936-f3ed8777ee58.png)
 
@@ -136,11 +142,12 @@ zone "77.151.10.in-addr.arpa" {
 6. Service bind9 restart<br /><br />
 
 **Testing pada Klien**<br />
-Pada UML GRESIK atau UML SIDOARJO, masukkan command host -t PTR 10.151.77.92. Hasilnya adalah sebagai berikut
+Pada UML GRESIK atau UML SIDOARJO, masukkan command ```host -t PTR 10.151.77.92``` <br />
+Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99044639-08228180-25cb-11eb-82ad-ef39ab3f4f28.png)
 
-Karena sudah mengarah ke semeruc10.pw, berarti reverese domain kita berhasil
+Karena sudah mengarah ke semeruc10.pw, berarti reverse domain kita berhasil
 <br /><br /><br /><br />
 
 #### 5. DNS Server Slave pada MOJOKERTO
@@ -185,11 +192,13 @@ service bind9 stop
 
 ![image](https://user-images.githubusercontent.com/57977401/99045829-e32f0e00-25cc-11eb-8245-bd67360e3f68.png)
 
-2. Pada Klien UML SIDOARJO atau UML GRESIK, masukkan perintah nano /etc/resolv.conf, lalu tambahkan IP MOJOKERTO
+2. Pada Klien UML SIDOARJO atau UML GRESIK, masukkan perintah ```nano /etc/resolv.conf```, lalu tambahkan IP MOJOKERTO
 
 ![image](https://user-images.githubusercontent.com/57977401/99046133-49b42c00-25cd-11eb-92ec-c07145ca91a9.png)
 
-3. ping semeruc10.pw atau host -t A semeruc10.pw. Apabila hasilnya seperti yang tertera dibawah, maka DNS Slave berhasil
+3. Melakukan ```ping semeruc10.pw``` atau ```host -t A semeruc10.pw```. 
+
+4. Apabila hasilnya seperti yang tertera dibawah, maka DNS Slave berhasil
 
 ![image](https://user-images.githubusercontent.com/57977401/99046351-96980280-25cd-11eb-8867-5947fb3fd035.png)
 <br /><br /><br /><br />
@@ -260,7 +269,8 @@ allow-query{any;};
 9. Service bind9 restart<br /><br />
 
 **Testing pada Klien**<br />
-Pada UML GRESIK atau UML SIDOARJO, ping gunung.semeruc10.pw atau host -t A gunung.semeruc10.pw. Hasilnya adalah sebagai berikut
+Pada UML GRESIK atau UML SIDOARJO, ```ping gunung.semeruc10.pw``` atau ```host -t A gunung.semeruc10.pw``` <br />
+Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99047524-49b52b80-25cf-11eb-9905-a00c89b98fd5.png)
 
@@ -282,7 +292,8 @@ naik	IN	A	10.151.77.92
 3. Service bind9 restart<br /><br />
 
 **Testing pada Klien**<br />
-Pada UML GRESIK atau UML SIDOARJO, ping gunung.semeruc10.pw atau host -t A gunung.semeruc10.pw. Hasilnya adalah sebagai berikut
+Pada UML GRESIK atau UML SIDOARJO, ```ping gunung.semeruc10.pw``` atau ```host -t A gunung.semeruc10.pw``` <br />
+Hasilnya adalah sebagai berikut
 
 ![image](https://user-images.githubusercontent.com/57977401/99047938-e24bab80-25cf-11eb-8045-09b7660ad752.png)
 
@@ -314,9 +325,11 @@ ServerAlias www.semeruc10.pw
 10. service apache2 restart<br /><br />
 
 **Testing**<br />
-Buka semeruc10.pw, akan muncul halaman seperti dibawah
+1. Buka semeruc10.pw.
+2. Apabila sudah muncul halaman seeperti dibawah, maka konfigurasi sudah benar
 
 ![image](https://user-images.githubusercontent.com/57977401/99056459-4a50c080-25d5-11eb-93f0-d7307d870380.png)
+
 <br /><br /><br /><br />
 
 #### 9. Diaktifkan mod rewrite agar urlnya menjadi http://semeruc10.pw/home.
