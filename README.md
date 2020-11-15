@@ -1,33 +1,154 @@
- # Jarkom_Modul2_Praktikum_C10
+# Jarkom_Modul2_Praktikum_C10
 
+#
 ### Kelompok C_10
 #### Asisten Dosen Bella Septina 
-#### Adrian Danindra 05111840000068
-#### Amelia Puji     05111840000147 
+1. Adrian Danindra 05111840000068
+2. Amelia Puji     05111840000147 
+#
 
 <br />
 
 #### Konfigurasi pada Topologi.sh
 
-`#` Switch<br />
+```
+# Switch
 uml_switch -unix switch1 > /dev/null < /dev/null &<br />
 uml_switch -unix switch2 > /dev/null < /dev/null &<br />
 
-`#` Router<br />
+# Router
 xterm -T SURABAYA -e linux ubd0=SURABAYA,jarkom umid=SURABAYA eth0=tuntap,,,10.151.76.45 eth1=daemon,,,switch2 eth2=daemon,,,switch1 mem=96M &<br />
 
-`#` Server<br />
+# Server
 xterm -T MALANG -e linux ubd0=MALANG,jarkom umid=MALANG eth0=daemon,,,switch2 mem=128M &<br />
 xterm -T MOJOKERTO -e linux ubd0=MOJOKERTO,jarkom umid=MOJOKERTO eth0=daemon,,,switch2 mem=128M &<br />
 xterm -T PROBOLINGGO -e linux ubd0=PROBOLINGGO ,jarkom umid=PROBOLINGGO eth0=daemon,,,switch2 mem=128M &<br />
 
-`#` Klien<br />
+# Klien
 xterm -T SIDOARJO -e linux ubd0=SIDOARJO,jarkom umid=SIDOARJO eth0=daemon,,,switch1 mem=96M &<br />
 xterm -T GRESIK -e linux ubd0=GRESIK,jarkom umid=GRESIK eth0=daemon,,,switch1 mem=96M &<br />
+```
 
+Kemudian setelah masuk ke UML, pada router SURABAYA lakukan setting sysctl dengan mengetikkan perintah ```nano /etc/sysctl.conf```. Hilangkan tanda pagar (#) pada bagian ```net.ipv4.ip_forward=1```. Lalu mengetikkan ```sysctl -p``` untuk mengaktifkan perubahan yang ada. 
+
+Lalu dilakukan setting IP pada setiap UML dengan mengetikkan ```nano /etc/network/interfaces``` Lalu setting sebagai berikut:
+
+**SURABAYA (Sebagai Router)**
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.151.76.46
+netmask 255.255.255.252
+gateway 10.151.76.45
+
+auto eth1
+iface eth1 inet static
+address 10.151.77.89
+netmask 255.255.255.248
+
+auto eth2
+iface eth2 inet static
+address 192.168.0.1
+netmask 255.255.255.0
+```
+
+**MALANG (Sebagai DNS Server Master)**
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.151.77.90
+netmask 255.255.255.248
+gateway 10.151.77.89
+```
+
+**MOJOKERTO (Sebagai DNS Server Slave)**
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.151.77.91
+netmask 255.255.255.248
+gateway 10.151.77.89
+```
+
+**PROBOLINGGO (Sebagai Web Server)**
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.151.77.92
+netmask 255.255.255.248
+gateway 10.151.77.89
+```
+
+**SIDOARJO (Sebagai Klien)**
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 192.168.0.2
+netmask 255.255.255.0
+gateway 192.168.0.1
+```
+
+**GRESIK (Sebagai Klien)**
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 192.168.0.3
+netmask 255.255.255.0
+gateway 192.168.0.1
+```
+
+Kemudian restart network dengan mengetikkan ```service networking restart``` di setiap UML.
+Setelah itu melakukan export proxy pada setiap UML dengan sintaks seperti di bawah ini:
+```
+export http_proxy=”http://DPTSI-562531-f37f7:f43e8@proxy.its.ac.id:8080”
+export https_proxy=”http://DPTSI-562531-f37f7:f43e8@proxy.its.ac.id:8080”
+export ftp_proxy=”http://DPTSI-562531-f37f7:f43e8@proxy.its.ac.id:8080”
+```
+Serta memberikan perintah ```apt-get update``` juga pada setiap UML untuk melakukan update.
+
+Setelah itu dapat dimulai pengerjaan Soal Shift.
 <br /><br />
 
-#### 1. Alamat http://semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
+### Pengerjaan Soal
+1. [Soal1](#soal1)
+2. [Soal2](#soal2)
+3. [Soal3](#soal3)
+4. [Soal4](#soal4)
+5. [Soal5](#soal5)
+6. [Soal6](#soal6)
+7. [Soal7](#soal7)
+8. [Soal8](#soal8)
+9. [Soal9](#soal9)
+10. [Soal10](#soal10)
+11. [Soal11](#soal11)
+12. [Soal12](#soal12)
+13. [Soal13](#soal13)
+14. [Soal14](#soal14)
+15. [Soal15](#soal15)
+16. [Soal16](#soal16)
+17. [Soal17](#soal17)
+#
+
+#### Soal1. Alamat http://semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
+#
 Jawab : <br />
 **Pada UML MALANG**
 
@@ -67,7 +188,8 @@ Hasilnya adalah sebagai berikut
 Karena sudah mengarah ke IP PROBOLINGGO, berarti konfigurasi domain berhasil
 <br /><br /><br /><br />
 
-#### 2. Alias http://www.semeruc10.pw 
+#### Soal2. Alias http://www.semeruc10.pw
+# 
 Jawab : <br />
 **Pada UML MALANG**
 1. nano /etc/bind/semeruc10/semeruc10.pw
@@ -90,7 +212,8 @@ Karena sudah mengarah ke semeruc10.pw, berarti alias kita berhasil
 <br /><br /><br /><br />
 
 
-#### 3.Subdomain http://penanjakan.semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
+#### Soal3. Subdomain http://penanjakan.semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
+#
 Jawab : <br />
 **Pada UML MALANG**
 
