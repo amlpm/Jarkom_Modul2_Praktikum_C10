@@ -7,7 +7,6 @@
 2. Amelia Puji     05111840000147 
 #
 
-<br />
 
 #### Konfigurasi pada Topologi.sh
 
@@ -128,7 +127,7 @@ Setelah itu dapat dimulai pengerjaan Soal Shift.
 <br /><br />
 
 ### Pengerjaan Soal
-1. [Soal1](#soal1)
+1. [Soal1](#Soal1. Alamat http://semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO)
 2. [Soal2](#soal2)
 3. [Soal3](#soal3)
 4. [Soal4](#soal4)
