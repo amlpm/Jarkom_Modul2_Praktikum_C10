@@ -1,6 +1,5 @@
 # Jarkom_Modul2_Praktikum_C10
 
-#
 ### Kelompok C_10
 #### Asisten Dosen Bella Septina 
 1. Adrian Danindra 05111840000068
