@@ -776,6 +776,7 @@ Require valid-user
 - AuthName merupakan pemilihan nama realm yang akan ditampilkan kepada pengguna saat meminta kredensial<br />
 - AuthUserFile merupakan path dari file password yang sudah kita buat, yaitu di /etc/apache2/.htpasswd. Ini untuk mengarahkan Apache ke file kata sandi yang kita buat<br />
 - Require valid-user menunjukkan bahwa kita membutuhkan pengguna yang valid untuk mengakses sumber daya ini, yang berarti siapa pun yang dapat memverifikasi identitas mereka dengan kata sandi akan diizinkan masuk<br /><br />
+10. service apache2 restart
 
 **Testing**<br />
 1. Buka naik.gunung.semeruc10.pw:8888
@@ -787,8 +788,6 @@ Require valid-user
 4. Apabila tampilan site sudah seperti dibawah (bisa masuk), maka authentifikasi berhasil
 
 ![image](https://user-images.githubusercontent.com/57977401/99069151-c7396580-25e8-11eb-892c-c80e16ce83c6.png)
-
-10. service apache2 restart
 <br /><br /><br /><br />
 
 ### Nomor16 
