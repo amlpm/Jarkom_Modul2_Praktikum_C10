@@ -127,7 +127,7 @@ Setelah itu dapat dimulai pengerjaan Soal Shift.
 <br /><br />
 
 ### Pengerjaan Soal
-1. [Soal1](#Soal1. Alamat http://semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO)
+1. [Soal1](#Nomor1)
 2. [Soal2](#soal2)
 3. [Soal3](#soal3)
 4. [Soal4](#soal4)
@@ -146,7 +146,8 @@ Setelah itu dapat dimulai pengerjaan Soal Shift.
 17. [Soal17](#soal17)
 #
 
-#### Soal1. Alamat http://semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
+#### Nomor1
+#### Alamat http://semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
 #
 Jawab : <br />
 **Pada UML MALANG**
