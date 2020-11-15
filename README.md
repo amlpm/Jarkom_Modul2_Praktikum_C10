@@ -122,28 +122,27 @@ export https_proxy=”http://DPTSI-562531-f37f7:f43e8@proxy.its.ac.id:8080”
 export ftp_proxy=”http://DPTSI-562531-f37f7:f43e8@proxy.its.ac.id:8080”
 ```
 Serta memberikan perintah ```apt-get update``` juga pada setiap UML untuk melakukan update.
-
-Setelah itu dapat dimulai pengerjaan Soal Shift.
+Baru kita mulai megerjakan soal shift
 <br /><br />
 
 ### Pengerjaan Soal
-1. [Soal1](#Nomor1)
-2. [Soal2](#soal2)
-3. [Soal3](#soal3)
-4. [Soal4](#soal4)
-5. [Soal5](#soal5)
-6. [Soal6](#soal6)
-7. [Soal7](#soal7)
-8. [Soal8](#soal8)
-9. [Soal9](#soal9)
-10. [Soal10](#soal10)
-11. [Soal11](#soal11)
-12. [Soal12](#soal12)
-13. [Soal13](#soal13)
-14. [Soal14](#soal14)
-15. [Soal15](#soal15)
-16. [Soal16](#soal16)
-17. [Soal17](#soal17)
+1. [Nomor 1](#Nomor1)
+2. [Nomor 2](#Nomor2)
+3. [Nomor 3](#Nomor3)
+4. [Nomor 4](#Nomor4)
+5. [Nomor 5](#Nomor5)
+6. [Nomor 6](#Nomor6)
+7. [Nomor 7](#Nomor7)
+8. [Nomor 8](#Nomor8)
+9. [Nomor 9](#Nomor9)
+10. [Nomor 10](#Nomor10)
+11. [Nomor 11](#Nomor11)
+12. [Nomor 12](#Nomor12)
+13. [Nomor 13](#Nomor13)
+14. [Nomor 14](#Nomor14)
+15. [Nomor 15](#Nomor15)
+16. [Nomor 16](#Nomor16)
+17. [Nomor 17](#Nomor17)
 #
 
 ### Nomor1
