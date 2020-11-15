@@ -146,7 +146,7 @@ Setelah itu dapat dimulai pengerjaan Soal Shift.
 17. [Soal17](#soal17)
 #
 
-#### Nomor1
+### Nomor1
 #### Alamat http://semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
 #
 Jawab : <br />
@@ -188,7 +188,8 @@ Hasilnya adalah sebagai berikut
 Karena sudah mengarah ke IP PROBOLINGGO, berarti konfigurasi domain berhasil
 <br /><br /><br /><br />
 
-#### Soal2. Alias http://www.semeruc10.pw
+### Nomor2 
+#### Alias http://www.semeruc10.pw
 # 
 Jawab : <br />
 **Pada UML MALANG**
@@ -212,7 +213,8 @@ Karena sudah mengarah ke semeruc10.pw, berarti alias kita berhasil
 <br /><br /><br /><br />
 
 
-#### Soal3. Subdomain http://penanjakan.semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
+### Nomor3 
+#### Subdomain http://penanjakan.semeruc10.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO
 #
 Jawab : <br />
 **Pada UML MALANG**
@@ -234,9 +236,11 @@ Hasilnya adalah sebagai
 ![image](https://user-images.githubusercontent.com/57977401/99048219-3ce50780-25d0-11eb-8936-f3ed8777ee58.png)
 
 Karena sudah mengarah pada PROBOLINGGO, maka subdomain penanjakan.semeruc10.pw berhasil dibuat
-<br /><br /><br />
+<br /><br /><br /><br />
 
-#### 4. Reverse domain untuk domain utama. 
+### Nomor4
+#### Reverse domain untuk domain utama. 
+#
 Jawab : <br />
 **Pada UML MALANG**
 1. nano /etc/bind/named.conf.local
@@ -273,7 +277,9 @@ Hasilnya adalah sebagai berikut
 Karena sudah mengarah ke semeruc10.pw, berarti reverse domain kita berhasil
 <br /><br /><br /><br />
 
-#### 5. DNS Server Slave pada MOJOKERTO
+### Nomor5 
+#### DNS Server Slave pada MOJOKERTO
+#
 Jawab : <br />
 **Pada UML MALANG**
 1. nano /etc/bind/named.conf.local
@@ -327,7 +333,9 @@ service bind9 stop
 <br /><br /><br /><br />
 
 
-#### 6. Subdomain dengan alamat http://gunung.semeruC10.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.
+### Nomor6
+#### Subdomain dengan alamat http://gunung.semeruC10.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.
+#
 Jawab : <br />
 **Pada UML MALANG**<br />
 1. nano /etc/bind/semeruc10/semeruc10.pw
@@ -401,7 +409,9 @@ Karena sudah mengarah ke server probolinggo, berarti Delegasi Domain berhasil
 <br /><br /><br /><br />
 
 
-#### 7. Subdomain dengan nama http://naik.gunung.semeruc10.pw, domain ini diarahkan ke IP Server PROBOLINGGO. 
+### Nomor7
+#### Subdomain dengan nama http://naik.gunung.semeruc10.pw, domain ini diarahkan ke IP Server PROBOLINGGO. 
+#
 Jawab : <br />
 **Pada UML MOJOKERTO**
 1. nano /etc/bind/delegasi/gunung.semeruc10.pw
@@ -421,9 +431,11 @@ Hasilnya adalah sebagai berikut
 ![image](https://user-images.githubusercontent.com/57977401/99047938-e24bab80-25cf-11eb-8045-09b7660ad752.png)
 
 Karena sudah mengarah ke server probolinggo, berarti subdomain berhasil
-<br /><br /><br />
+<br /><br /><br /><br />
 
-#### 8. Domain http://semeruc10.pw memiliki DocumentRoot pada /var/www/semeruc10.pw.
+### Nomor8 
+#### Domain http://semeruc10.pw memiliki DocumentRoot pada /var/www/semeruc10.pw.
+#
 Jawab : <br />
 1. cd /etc/apache2/sites-available
 2. cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/semeruc10.pw.conf
@@ -452,10 +464,11 @@ ServerAlias www.semeruc10.pw
 2. Apabila sudah muncul halaman seeperti dibawah, maka konfigurasi sudah benar
 
 ![image](https://user-images.githubusercontent.com/57977401/99056459-4a50c080-25d5-11eb-93f0-d7307d870380.png)
-
 <br /><br /><br /><br />
 
-#### 9. Diaktifkan mod rewrite agar urlnya menjadi http://semeruc10.pw/home.
+### Nomor9
+#### Diaktifkan mod rewrite agar urlnya menjadi http://semeruc10.pw/home.
+#
 Jawab : <br />
 1. Jalankan perintah a2enmod rewrite untuk mengaktifkan module rewrite
 2. nano cd/var/www/semeruc10.pw/.htaccess
@@ -476,15 +489,16 @@ RewriteRule ^(.*)$ index.php/$1 [L,QSA]
 Buka semeruc10.pw/home, akan muncul halaman seperti dibawah
 
 ![image](https://user-images.githubusercontent.com/57977401/99056660-9a2f8780-25d5-11eb-9b87-2e7f0d38ab37.png)
-
 <br /><br /><br /><br />
 
-#### 10. Web http://penanjakan.semeruc10.pw akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot pada /var/www/penanjakan.semeruc10.pw dan memiliki struktur folder sebagai berikut:
+### Nomor10 
+#### Web http://penanjakan.semeruc10.pw akan digunakan untuk menyimpan assets file yang memiliki DocumentRoot pada /var/www/penanjakan.semeruc10.pw dan memiliki struktur folder sebagai berikut:
 /var/www/penanjakan.semeruc10.pw<br />
 /public/javascripts<br />
 /public/css<br />
 /public/images<br />
 /errors<br />
+#
 Jawab : <br />
 1. cd /etc/apache2/sites-available
 2. cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/penanjakan.semeruc10.pw.conf
@@ -511,10 +525,11 @@ ServerName penanjakan.semeruc10.pw
 Buka penanjakan.semeruc10.pw, akan muncul halaman seperti dibawah
 
 ![image](https://user-images.githubusercontent.com/57977401/99070638-9444a100-25eb-11eb-9b8a-68ee0a0022d9.png)
-
 <br /><br /><br /><br />
 
-#### 11. Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan.
+### Nomor11 
+#### Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan.
+#
 Jawab : <br />
 1. nano /etc/apache2/sites-available/penanjakan.semeruc10.pw.conf
 2. Tambahkan konfigurasi di bawah lalu di save
@@ -559,7 +574,9 @@ apabila ketiganya tidak dapat diakses, maka konfigurasi selesai
 Apabila folder public dapat diakses, maka maka konfigurasi selesai
 <br /><br /><br /><br />
 
-#### 12. Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
+### Nomor12 
+#### Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
+#
 Jawab : <br />
 **Untuk Sites penanjakan.semeruc10.pw.**
 1. nano penanjakan.semeruc10.pw.conf 
@@ -604,7 +621,9 @@ Gambar untuk konfigurasi Error 404 dapat dilihat dibawah : <br />
 Ketiganya menghasilkan halaman error yang sama seperti yang ditampilkan diatas, maka konfigurasi sudah terhitung benar
 <br /><br /><br /><br />
 
-#### 13. Untuk mengakses file assets javascript awalnya harus menggunakan url http://penanjakan.semeruc10.pw/public/javascripts. Karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi http://penanjakan.semeruc10.pw/js.
+### Nomor13 
+#### Untuk mengakses file assets javascript awalnya harus menggunakan url http://penanjakan.semeruc10.pw/public/javascripts. Karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi http://penanjakan.semeruc10.pw/js.
+#
 Jawab : <br />
 1. nano penanjakan.semeruc10.pw.conf
 2. Tambahkan konfigurasi di bawah lalu di save
@@ -639,7 +658,9 @@ Menjadi
 ![image](https://user-images.githubusercontent.com/57977401/99062691-52612e00-25de-11eb-82a3-747831ded7d9.png)
 <br /><br /><br /><br />
 
-#### 14. Sedangkan web http://naik.gunung.semeruc10.pw sudah bisa diakses hanya dengan menggunakan port 8888. DocumentRoot web berada pada /var/www/naik.gunung.semeruc10.pw. 
+### Nomor14 
+#### Sedangkan web http://naik.gunung.semeruc10.pw sudah bisa diakses hanya dengan menggunakan port 8888. DocumentRoot web berada pada /var/www/naik.gunung.semeruc10.pw. 
+#
 Jawab : <br />
 1. cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/naik.gunung.semeruc10.pw
 2. nano /etc/apache2/sites-available/naik.gunung.semeruc10.pw
@@ -685,10 +706,11 @@ Listen 8888
 - Kami menambahkan directory listing pada konfigurasi naik.gunung.semeruc10.pw.conf dengan command sebagai berikut. Tujuannya karena ingin melihat directory di dalam naik.gunung.semeruc10.pw saja tanpa ada tujuan lain
 
 ![image](https://user-images.githubusercontent.com/57977401/99071853-e2f33a80-25ed-11eb-8e14-12820c39e85a.png)
-
 <br /><br /><br /><br />
 
-#### 15. Dikarenakan web http://naik.gunung.semeruc10.pw bersifat private, harus membuat web http://naik.gunung.semeruc10.pw agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung”
+### Nomor15 
+#### Dikarenakan web http://naik.gunung.semeruc10.pw bersifat private, harus membuat web http://naik.gunung.semeruc10.pw agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung”
+#
 Jawab : <br />
 1. nano /etc/apache2/sites-available/000-default.conf
 2. Tambahkan konfigurasi di bawah lalu di save 
@@ -767,10 +789,11 @@ Require valid-user
 ![image](https://user-images.githubusercontent.com/57977401/99069151-c7396580-25e8-11eb-892c-c80e16ce83c6.png)
 
 10. service apache2 restart
-
 <br /><br /><br /><br />
 
-#### 16. Karena dirasa kurang profesional, maka setiap Bibah mengunjungi IP PROBOLINGGO akan dialihkan secara otomatis ke http://semeruc10.pw.
+### Nomor16 
+#### Karena dirasa kurang profesional, maka setiap Bibah mengunjungi IP PROBOLINGGO akan dialihkan secara otomatis ke http://semeruc10.pw.
+#
 Jawab : <br />
 1. nano /etc/apache2/sites-available/000-default.conf
 2. Tambahkan konfigurasi di bawah lalu di save 
@@ -788,7 +811,9 @@ Redirect / "http://semeruc10.pw/"
 
 <br /><br /><br /><br />
 
-#### 17. Karena pengunjung pada /var/www/penanjakan.semeruc10.pw/public/images sangat banyak maka semua request gambar yang memiliki substring “semeru” akan diarahkan menuju semeru.jpg.
+### Nomor17 
+#### Karena pengunjung pada /var/www/penanjakan.semeruc10.pw/public/images sangat banyak maka semua request gambar yang memiliki substring “semeru” akan diarahkan menuju semeru.jpg.
+#
 Jawab : <br />
 1. nano /var/www/penanjakan.semeruc10.pw/.htaccess
 2. Tambahkan konfigurasi di bawah lalu di save 
